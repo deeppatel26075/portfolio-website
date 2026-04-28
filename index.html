@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" style="overflow-x: hidden;">
 
 <head>
     <meta charset="UTF-8" />
@@ -20,6 +20,17 @@
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="70">
+
+    <!-- Side Dot Navigator -->
+    <nav id="dotNav" aria-label="Section Navigation">
+        <a href="#home" class="dot-nav-item active" data-section="home" title="Home"></a>
+        <a href="#about" class="dot-nav-item" data-section="about" title="About Me"></a>
+        <a href="#skills" class="dot-nav-item" data-section="skills" title="Skills"></a>
+        <a href="#journey" class="dot-nav-item" data-section="journey" title="Journey"></a>
+        <a href="#projects" class="dot-nav-item" data-section="projects" title="Projects"></a>
+        <a href="#contact" class="dot-nav-item" data-section="contact" title="Contact"></a>
+    </nav>
+
     <!-- Navigation Menu -->
     <nav class="navbar navbar-expand-lg fixed-top shadow-sm" id="mainNav">
         <div class="container">
@@ -51,22 +62,23 @@
         </div>
     </nav>
 
-    <!-- Home Page / Introduction -->
-    <header id="home" class="hero-section d-flex align-items-center">
+    <header id="home" class="hero-section">
         <div class="container text-center text-white hero-content">
-            <h1 class="display-3 fw-bold mb-3 mt-5">
-                Hi, I'm Deep Nayankumar Patel
+            <h1 class="display-3 fw-bold mb-3">
+                Hi, I'm Deep Patel
             </h1>
             <h2 class="fs-4 fw-light mb-2 text-white-50">
-                DevOps Engineer | CI/CD • Cloud • Automation
+                Aspiring DevOps Engineer
             </h2>
-            <p class="fs-5 fw-light text-white-50 mb-4">
-                I help developers deploy applications faster using Docker, AWS, and
-                automated pipelines.
+            <p class="fs-5 fw-light text-white-50 mb-2">
+                I build, automate, and deploy scalable applications using modern DevOps practices.
+            </p>
+            <p class="fs-6 fw-bold text-warning mb-4">
+                This website is deployed using CI/CD with GitHub and Vercel.
             </p>
             <div class="d-flex justify-content-center gap-3 flex-wrap mt-3">
                 <a href="#projects" class="btn btn-primary btn-lg rounded-pill px-5 shadow-sm">View My Work</a>
-                <a href="assets/resume.pdf" target="_blank"
+                <a href="DeepPatel-Resume.pdf" target="_blank"
                     class="btn btn-outline-light btn-lg rounded-pill px-5 shadow-sm"><i
                         class="fa-solid fa-download me-2"></i>Download Resume</a>
             </div>
@@ -81,8 +93,8 @@
     </header>
 
     <!-- About Me Section -->
-    <section id="about" class="py-5">
-        <div class="container py-lg-5">
+    <section id="about">
+        <div class="container">
             <div class="row text-center mb-5">
                 <h2 class="fw-bold">About Me</h2>
                 <div class="divider mt-2"></div>
@@ -94,28 +106,28 @@
                         class="img-fluid rounded-circle shadow-lg profile-img border border-4 border-white" />
                 </div>
                 <div class="col-lg-7 px-lg-5">
-                    <h3 class="mb-3 fw-bold">DevOps & Cloud Engineer</h3>
+                    <h3 class="mb-3 fw-bold">What I Do</h3>
                     <p class="lead text-muted fw-bold">
-                        I build systems that automate deployment and reduce manual effort
-                        using CI/CD pipelines, Docker, and cloud infrastructure.
-                    </p>
-                    <p>
-                        Instead of manual setups, I focus on executing modern
-                        infrastructure-as-code to build resilient architectures. I
-                        specialize in CI/CD, Containerization, and Cloud Networking to
-                        ensure smooth, secure, and scalable deployments.
+                        I focus on building and deploying applications using automation and cloud technologies.<br>
+                        Currently learning CI/CD pipelines, Docker, and cloud infrastructure.
                     </p>
 
-                    <div class="mt-4 mb-4 bg-light p-4 rounded-4 shadow-sm border border-white">
+                    <h3 class="mt-4 mb-3 fw-bold">DevOps Skills</h3>
+                    <div class="mb-4 bg-light p-4 rounded-4 shadow-sm border border-white">
                         <ul class="text-muted fw-bold ps-3 mb-0" style="list-style-type: square; line-height: 1.8">
-                            <li>Reduced deployment time by 60% using CI/CD automation</li>
-                            <li>
-                                Decreased manual errors by implementing containerized
-                                workflows
-                            </li>
-                            <li>Improved deployment consistency across environments</li>
+                            <li>Git & GitHub <a href="https://github.com/deeppatel26075" target="_blank"
+                                    class="ms-2 text-secondary"><i class="fa-brands fa-github"></i> GitHub</a></li>
+                            <li>CI/CD (Vercel auto deployment)</li>
+                            <li>Docker (Learning)</li>
+                            <li>AWS (Learning)</li>
                         </ul>
                     </div>
+
+                    <h3 class="mt-4 mb-3 fw-bold">Future Goals</h3>
+                    <p class="text-muted">
+                        To become a DevOps engineer specializing in automation, cloud infrastructure, and scalable
+                        systems.
+                    </p>
 
                     <div class="mt-4 pt-2">
                         <a href="#contact" class="btn btn-outline-primary rounded-pill px-4 me-2 shadow-sm">Let's
@@ -130,8 +142,8 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-5 bg-light">
-        <div class="container py-lg-5">
+    <section id="skills" class="bg-light">
+        <div class="container">
             <div class="row text-center mb-5">
                 <h2 class="fw-bold">Technical Expertise</h2>
                 <div class="divider mt-2"></div>
@@ -313,8 +325,8 @@
     </section>
 
     <!-- DevOps Journey Section -->
-    <section id="journey" class="py-5">
-        <div class="container py-lg-5">
+    <section id="journey">
+        <div class="container">
             <div class="row text-center mb-5">
                 <h2 class="fw-bold">DevOps Journey & Continuous Learning</h2>
                 <div class="divider mt-2"></div>
@@ -438,17 +450,17 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-5 bg-light">
-        <div class="container py-lg-5">
+    <section id="projects" class="bg-light">
+        <div class="container">
             <div class="row text-center mb-5">
                 <h2 class="fw-bold">My Projects</h2>
                 <div class="divider mt-2"></div>
                 <p class="text-muted mt-3">Showcasing my recent work.</p>
             </div>
 
-            <div class="row justify-content-center">
+            <div class="row justify-content-center projects-row">
                 <!-- AI-Powered Deployment Platform -->
-                <div class="col-md-6 col-lg-4 mb-4">
+                <div class="col-md-6 col-lg-4 mb-4 project-col">
                     <div
                         class="card project-card shadow border-0 h-100 rounded-4 overflow-hidden d-flex flex-column transition-hover">
                         <div class="bg-dark py-4 text-center px-4 position-relative overflow-hidden" style="
@@ -535,7 +547,7 @@
                 </div>
 
                 <!-- DeepLex AI -->
-                <div class="col-md-6 col-lg-4 mb-4">
+                <div class="col-md-6 col-lg-4 mb-4 project-col">
                     <div
                         class="card project-card shadow border-0 h-100 rounded-4 overflow-hidden d-flex flex-column transition-hover">
                         <div class="bg-primary py-4 text-center px-4 position-relative overflow-hidden" style="
@@ -597,7 +609,7 @@
                 </div>
 
                 <!-- Personal Portfolio Website -->
-                <div class="col-md-6 col-lg-4 mb-4">
+                <div class="col-md-6 col-lg-4 mb-4 project-col">
                     <div
                         class="card project-card shadow border-0 h-100 rounded-4 overflow-hidden d-flex flex-column transition-hover">
                         <div class="bg-info py-4 text-center px-4 position-relative overflow-hidden" style="
@@ -615,25 +627,16 @@
                                 style="width: 150px; height: 150px; top: -50px; right: -50px"></div>
                         </div>
                         <div class="card-body p-4 text-start d-flex flex-column flex-grow-1">
-                            <p class="card-text text-muted small mb-3">
-                                A fully responsive personal portfolio website showcasing my
-                                projects, technical skills, and achievements. Containerized
-                                and deployed using modern DevOps practices.
-                            </p>
-
                             <div class="mb-3 flex-grow-1">
-                                <h6 class="fw-bold fs-6 mb-2 text-dark">
-                                    <i class="fa-solid fa-star text-warning me-2"></i> Features
-                                </h6>
-                                <ul class="text-muted small ps-3 mb-0" style="list-style-type: square">
-                                    <li>Responsive UI design</li>
-                                    <li>Project showcase & contact</li>
-                                    <li>Fast & optimized performance</li>
-                                    <li>
-                                        Deployed using Docker container on AWS EC2 with Nginx
-                                        reverse proxy and CI/CD pipeline via GitHub Actions.
-                                    </li>
-                                </ul>
+                                <p class="card-text text-muted small mb-3">
+                                    - Built using HTML, CSS, JavaScript<br>
+                                    - Implemented continuous deployment using GitHub & Vercel<br>
+                                    - Fully responsive design
+                                </p>
+                                <p class="card-text text-muted small fw-bold mt-2 pb-3 border-bottom">
+                                    <i class="fa-solid fa-server text-success me-1"></i> This project follows a CI/CD
+                                    workflow. Any changes pushed to GitHub are automatically deployed via Vercel.
+                                </p>
                             </div>
 
                             <div class="mb-3">
@@ -661,8 +664,17 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Mobile Project Scroll Dots -->
+            <div class="project-dots-bar" id="projectDots">
+                <span class="project-dot active" data-index="0"></span>
+                <span class="project-dot" data-index="1"></span>
+                <span class="project-dot" data-index="2"></span>
+            </div>
+
         </div>
     </section>
+
 
     <!-- Trust & Social Proof Section -->
     <section class="py-5 bg-white border-top">
@@ -798,8 +810,8 @@
     </section>
 
     <!-- Contact Information Section -->
-    <section id="contact" class="py-5 bg-light">
-        <div class="container py-lg-5">
+    <section id="contact">
+        <div class="container">
             <div class="row text-center mb-5">
                 <h2 class="fw-bold">Contact Me</h2>
                 <div class="divider mt-2"></div>

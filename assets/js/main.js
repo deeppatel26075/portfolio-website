@@ -13,6 +13,21 @@ $(document).ready(function () {
     } else {
       navbar.removeClass("scrolled");
     }
+
+    // Side Dot Navigator - highlight active section
+    const scrollPos = $(this).scrollTop() + 120;
+    const sections = ["home", "about", "skills", "journey", "projects", "contact"];
+    sections.forEach(function (id) {
+      const section = $("#" + id);
+      if (section.length) {
+        const top = section.offset().top;
+        const bottom = top + section.outerHeight();
+        if (scrollPos >= top && scrollPos < bottom) {
+          $(".dot-nav-item").removeClass("active");
+          $(`.dot-nav-item[data-section="${id}"]`).addClass("active");
+        }
+      }
+    });
   });
 
   // 2. Responsive adjustment for mobile collapse
@@ -104,23 +119,50 @@ $(document).ready(function () {
       $("#errorMsg").addClass("d-none");
     }
   });
-  // Live Deployment Fake API Pull
-  const ciStatusText = $("#ciStatusText");
-  const serverStatusText = $("#serverStatusText");
 
-  if (ciStatusText.length && serverStatusText.length) {
-    setInterval(() => {
-      ciStatusText.text("Syncing...");
-      setTimeout(() => {
-        ciStatusText.text("CI/CD Active");
-      }, 1000);
-    }, 5000);
 
-    setInterval(() => {
-      serverStatusText.text("Checking Health...");
-      setTimeout(() => {
-        serverStatusText.text("Server Running");
-      }, 1500);
-    }, 8000);
+  // Interactive Architecture Flow
+  $(".arch-node").on("click", function () {
+    // Remove active class from all nodes
+    $(".arch-node").removeClass("active");
+    // Add to clicked node
+    $(this).addClass("active");
+
+    // Hide all info cards
+    $(".arch-card").addClass("d-none");
+
+    // Show target info card
+    const targetId = $(this).attr("data-info");
+    $("#" + targetId).removeClass("d-none");
+  });
+
+  // =============================================
+  // Mobile Project Scroll Dot Indicators
+  // =============================================
+  const projectsRow = $(".projects-row");
+  const projectDots = $(".project-dot");
+
+  if (projectsRow.length && projectDots.length) {
+    projectsRow.on("scroll", function () {
+      const scrollLeft = $(this).scrollLeft();
+      const cardWidth = $(this).find(".project-col").first().outerWidth(true);
+      // Which card index is most in view?
+      const index = Math.round(scrollLeft / cardWidth);
+      const clampedIndex = Math.min(index, projectDots.length - 1);
+
+      projectDots.removeClass("active");
+      projectDots.eq(clampedIndex).addClass("active");
+    });
+
+    // Clicking a dot scrolls to that card
+    projectDots.on("click", function () {
+      const index = parseInt($(this).attr("data-index"));
+      const cardWidth = projectsRow.find(".project-col").first().outerWidth(true);
+      projectsRow.animate({ scrollLeft: cardWidth * index }, 300);
+    });
   }
+
+
+
+
 });
